@@ -22,7 +22,7 @@ window.onload = function() {
         //create script to fetch 40 quotes
 	var scriptQuote = document.createElement("script");
 	scriptQuote.id = "getQuote";
-	scriptQuote.src = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=40&_jsonp=displayRandomQuote";
+	scriptQuote.src = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=40&_jsonp=displayRandomQuote";
 
 	document.body.appendChild(scriptQuote);
 	document.getElementById(scriptQuote.id).remove();
