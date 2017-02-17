@@ -1,31 +1,30 @@
 window.onload = function() {
 
-        //store array of quotes
-        window.quotesArr;
+    //callback
+    window.displayRandomQuote = function (quotes) {
 
-        //callback
-	window.displayRandomQuote = function (quotes) {
-	    quotesArr = quotes;
+	//generate random number between 0 and 39 
+	window.quoteIndex =  Math.floor(Math.random() * (40)); 
+	//get a random quote object from the array
+	var randomQuote = quotes[quoteIndex];
 
-	    //generate random number between 0 and 39 
-            window.quoteIndex =  Math.floor(Math.random() * (40)); 
+        //put the quote text into #quote
+	var quoteElementNode = document.getElementById("quote");
+	quoteElementNode.innerHTML = randomQuote.content;
 
-	    window.randomQuote = quotesArr[quoteIndex];
+	//put the quote author into #author 
+	var authorElementNode = document.getElementById("author");
+	authorElementNode.innerHTML = randomQuote.title;
 
+    };
 
-            console.log(quoteIndex);
-            console.log(quotesArr);
+    //create script to fetch 40 quotes
+    var scriptQuote = document.createElement("script");
+    scriptQuote.id = "getQuote";
+    scriptQuote.src = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=40&_jsonp=displayRandomQuote";
+    document.body.appendChild(scriptQuote);
+    //remove script element
+    document.getElementById(scriptQuote.id).remove();
 
-	    console.log(randomQuote.content);
-	};
-
-        //create script to fetch 40 quotes
-	var scriptQuote = document.createElement("script");
-	scriptQuote.id = "getQuote";
-	scriptQuote.src = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=40&_jsonp=displayRandomQuote";
-
-	document.body.appendChild(scriptQuote);
-	document.getElementById(scriptQuote.id).remove();
-
-      };
+};
 
