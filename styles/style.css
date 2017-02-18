@@ -1,0 +1,24 @@
+/*
+http://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css
+      */
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none;
+}
+#quoteButton {
+    /* turn cursor into hand*/
+    cursor: pointer;
+    cursor: hand;	
+
+    display: inline;
+    background-color: #00FF00;
+    padding: 10px;
+    border-radius: 20%;
+}
+.fa {
+    margin: 25px;
+}
