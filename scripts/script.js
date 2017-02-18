@@ -1,7 +1,8 @@
-//get a quote when page loads 
+//get a quote when page loads for the first time
 window.onload = function () {
     getQuotes();
 }
+
 //callback
 var displayRandomQuote = function (quotes) {
     //generate random number between 0 and 39 
@@ -15,6 +16,8 @@ var displayRandomQuote = function (quotes) {
     //put the quote author into #author 
     var authorElementNode = document.getElementById("author");
     authorElementNode.innerHTML = randomQuote.title;
+
+    setTwitterButton();
 };
 
 //create script element to get quotes (JSONP)
@@ -26,3 +29,14 @@ var getQuotes = function() {
     //remove script element
     document.getElementById(scriptQuote.id).remove();
 };
+
+//put right link in twitter button
+var setTwitterButton = function () {
+    var text = document.getElementById("quote").firstChild.firstChild.nodeValue;
+
+    var buttonURL = "https://www.twitter.com/intent/tweet?text=" + encodeURI(text);
+
+    var twitterButton = document.getElementById("twitterLink");
+    twitterButton.setAttribute("href", buttonURL);
+};
+
