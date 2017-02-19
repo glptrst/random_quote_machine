@@ -1,3 +1,20 @@
+html {
+    background-color: #8EE1E1;
+}
+#main {
+    background-color: #7FBF3F;
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+#author {
+    text-align: right;
+}
 /*
 http://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css
       */
@@ -13,12 +30,15 @@ http://stackoverflow.com/questions/826782/how-to-disable-text-selection-highligh
     /* turn cursor into hand*/
     cursor: pointer;
     cursor: hand;	
-
     display: inline;
     background-color: #00FF00;
     padding: 10px;
-    border-radius: 20%;
+    border-radius: 10px;
 }
-.fa {
-    margin: 25px;
+
+#quoteButtonContainer {
+    text-align: center;
+}
+#twitterButtonContainer {
+    text-align: center;
 }
