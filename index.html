@@ -4,13 +4,15 @@
     <title>Random Quote Machine</title>
 
     <link rel="stylesheet" href="styles/font-awesome.min.css" type="text/css">
+    <!-- great css from Daniel Eden -->
+    <link rel="stylesheet" href="styles/animate.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
 
     <script src="scripts/script.js" type="text/javascript"></script>
 </head>
 <body>
-    <h1>Random Quote Machine</h1>
-    <div id="main">
+    <h1 class="animated bounceInDown">Random Quote Machine</h1>
+    <div class="animated fadeInLeft" id="main">
 	<div id="quote">
 	</div>
 
@@ -18,11 +20,11 @@
 	</div>
     </div>
 <br>
-    <div id="quoteButtonContainer">
-	<p onclick="getQuotes()" class="noselect" id="quoteButton">New Quote</p>
+    <div onclick="getQuotes()" class="animated bounceInUp" id="quoteButtonContainer">
+	<p class="noselect" id="quoteButton">New Quote</p>
     </div>
 <br>
-    <div id="twitterButtonContainer">
+    <div class="animated bounceInUp" id="twitterButtonContainer">
         <a id="twitterLink" href="https://www.twitter.com/intent/tweet?text=Hello%20world"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
     </div>
 </body>
