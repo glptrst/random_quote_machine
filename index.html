@@ -4,7 +4,7 @@
     <title>Random Quote Machine</title>
 
     <link rel="stylesheet" href="styles/font-awesome.min.css" type="text/css">
-    <!-- great css from Daniel Eden -->
+    <!-- great css for animation from Daniel Eden -->
     <link rel="stylesheet" href="styles/animate.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
 
@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1 class="animated bounceInDown">Random Quote Machine</h1>
-    <div class="animated fadeInLeft" id="main">
+    <div class="animated fadeInLeftBig" id="main">
 	<div id="quote">
 	</div>
 
@@ -20,8 +20,8 @@
 	</div>
     </div>
 <br>
-    <div onclick="getQuotes()" class="animated bounceInUp" id="quoteButtonContainer">
-	<p class="noselect" id="quoteButton">New Quote</p>
+    <div  class="animated bounceInUp" id="quoteButtonContainer">
+	<p onclick="setTimeout(getQuotes, 500)" class="noselect" id="quoteButton">New Quote</p>
     </div>
 <br>
     <div class="animated bounceInUp" id="twitterButtonContainer">
