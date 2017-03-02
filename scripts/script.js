@@ -18,7 +18,7 @@ var displayRandomQuote = function (quotes) {
     var quoteIndex =  Math.floor(Math.random() * 40); 
     //get a random quote object from the array
     var randomQuote = quotes[quoteIndex];
-    //put the quote text into #quote
+    //put the quote text into #quote (eliminating loading circle)
     var quoteElementNode = document.getElementById("quote");
     quoteElementNode.innerHTML = randomQuote.content;
     //put the quote author into #author 
