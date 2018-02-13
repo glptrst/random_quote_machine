@@ -17,7 +17,7 @@ window.onload = function () {
 };
 
 // Create, append (and remove) script element to get quotes (JSONP)
-var getQuotes = function() {
+function getQuotes() {
     var scriptQuote = document.createElement("script");
     scriptQuote.id = "getQuotes";
     scriptQuote.src = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=40&_jsonp=displayRandomQuote";
@@ -27,23 +27,27 @@ var getQuotes = function() {
 };
 
 // Get and array of 40 quotes and display one
-var displayRandomQuote = function (quotes) {
+function displayRandomQuote (quotes) {
     // Generate random number between 0 and 39 
     var quoteIndex =  Math.floor(Math.random() * 40); 
     // Get a random quote object from the array
     var randomQuote = quotes[quoteIndex];
+
     // Put the quote text into #quote (replacing loading circle)
     var quoteElementNode = document.getElementById("quote");
-    quoteElementNode.innerHTML = randomQuote.content;
+    // Use innerHTML since we get html text
+    quoteElementNode.innerHTML = randomQuote.content; 
+    
     // Put the quote author into #author 
     var authorElementNode = document.getElementById("author");
+    // Use innerHTML since we get html text
     authorElementNode.innerHTML = randomQuote.title;
 
     setTwitterButton();
 };
 
 // Put right link in twitter button
-var setTwitterButton = function () {
+function setTwitterButton () {
     var text = document.getElementById("quote").firstChild.firstChild.nodeValue;
 
     var buttonURL = "https://www.twitter.com/intent/tweet?text=" + encodeURI(text);
@@ -51,3 +55,5 @@ var setTwitterButton = function () {
     var twitterButton = document.getElementById("twitterLink");
     twitterButton.setAttribute("href", buttonURL);
 };
+
+
